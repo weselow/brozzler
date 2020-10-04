@@ -17,6 +17,11 @@ sudo apt-get update
 sudo apt-get install -y rethinkdb
 rethinkdb &
 
+# Add RethintDB to autostart
+# source: https://rethinkdb.com/docs/start-on-startup/#:~:text=RethinkDB%20packages%20automatically%20install%20an,d%2F%20.
+sudo cp /etc/rethinkdb/default.conf.sample /etc/rethinkdb/instances.d/instance1.conf
+sudo /etc/init.d/rethinkdb restart &
+
 # Install RethinkDB Driver
 # sudo apt-get install python3-venv
 # python3 -m venv ./venv
